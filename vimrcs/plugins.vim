@@ -40,6 +40,8 @@ call g:quickmenu#append('Create tab', 'tabnew', 'tn')
 call g:quickmenu#append('Delete tab', 'tabnew', 'tc')
 call g:quickmenu#append('Move to next tab', 'tabn', 'tm')
 call g:quickmenu#append('Move to previous tab', 'tabp', 'tp')
+call g:quickmenu#append('Correct spelling word', 'setlocal spell!', 'dd')
+call g:quickmenu#append('Shift Code Block', 'echo "shift + < or >"', 'shift + < or >')
 
 " section 2, text starting with "#" represents a section (see the screen capture below)
 call g:quickmenu#append('# Move cursor', '')
@@ -61,12 +63,27 @@ call g:quickmenu#append('Toggle Comment', 'echo "<leader>c<space>"', '<leader>c<
 call g:quickmenu#append('Comment', 'echo "<leader>cc"', '<leader>cc')
 call g:quickmenu#append('Uncomment', 'echo "<leader>cu"', '<leader>cu')
 
+" section 5, text starting with "#" represents a section (see the screen capture below)
+call g:quickmenu#append('# You Complete Me', '')
+
+call g:quickmenu#append('GoTo', 'YcmCompleter GoTo', 'yg')
+call g:quickmenu#append('GetType', 'YcmCompleter GetType', 'yt')
+call g:quickmenu#append('GetDoc', 'YcmCompleter GetDoc', 'yd')
+call g:quickmenu#append('Fix', 'YcmCompleter FixIt', 'yd')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => You Complete me
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ycm_server_python_interpreter='/usr/bin/python'
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+let g:ycm_goto_buffer_command = 'new-tab'
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_semantic_triggers = {'c' : ['->', '.'],'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s','re!\[.*\]\s'],'ocaml' : ['.', '#'],'cpp,objcpp' : ['->', '.', '::'],'perl' : ['->'],'php' : ['->', '::'],'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],'ruby' : ['.', '::'],'lua' : ['.', ':'],'erlang' : [':'],}
+
+nnoremap yg :YcmCompleter GoTo <CR>
+nnoremap yt :YcmCompleter GetType <CR>
+nnoremap yd :YcmCompleter GetDoc <CR>
+nnoremap yf :YcmCompleter FixIt <CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ALE

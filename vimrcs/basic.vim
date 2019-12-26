@@ -223,10 +223,10 @@ map <C-space> ?
 map <silent> <leader><cr> :noh<cr>
 
 " Smart way to move between windows
-map <leader>s <C-W>j
-map <leader>w <C-W>k
-map <leader>a <C-W>h
-map <leader>d <C-W>l
+map <leader><Down> <C-W>j
+map <leader><Up> <C-W>k
+map <leader><Left> <C-W>h
+map <leader><Right> <C-W>l
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
@@ -241,8 +241,8 @@ map <leader>h :bprevious<cr>
 map tn :tabnew<cr>
 map to :tabonly<cr>
 map tc :tabclose<cr>
-map tm :tabn<cr>
-map tp :tabp<cr>
+map f :tabn<cr>
+map b :tabp<cr>
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
@@ -289,6 +289,12 @@ nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
+inoremap f <Right><Right><Right><Right>
+inoremap b <Left><Left><Left><Left><Left>
+
+vnoremap <C-c> y
+" vnoremap <C-c> p
 
 if has("mac") || has("macunix")
   nmap <D-j> <M-j>
