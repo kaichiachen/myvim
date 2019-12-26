@@ -1,0 +1,6 @@
+*.*
+!.vimrc
+!.gitignore
+
+vimrcs/*.*
+!vimrcs/*.vim
