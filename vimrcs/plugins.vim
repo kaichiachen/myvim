@@ -35,11 +35,32 @@ call g:quickmenu#append('# Basic', '')
 
 call g:quickmenu#append('Search', './', '<space>')
 call g:quickmenu#append('PluginInstall', 'PlugInstall', 'PlugInstall')
+call g:quickmenu#append('Move Window', 'echo "<leader>a or w or s or d"', '<leader>a or w or s or d')
+call g:quickmenu#append('Create tab', 'tabnew', 'tn')
+call g:quickmenu#append('Delete tab', 'tabnew', 'tc')
+call g:quickmenu#append('Move to next tab', 'tabn', 'tm')
+call g:quickmenu#append('Move to previous tab', 'tabp', 'tp')
 
 " section 2, text starting with "#" represents a section (see the screen capture below)
+call g:quickmenu#append('# Move cursor', '')
+
+call g:quickmenu#append('Move a word', 'echo "w"', 'w')
+call g:quickmenu#append('Move to First', 'echo "gg"', 'gg')
+call g:quickmenu#append('Move to Last', 'echo GG"', 'G')
+
+
+" section 3, text starting with "#" represents a section (see the screen capture below)
 call g:quickmenu#append('# Nerd Tree', '')
 
 call g:quickmenu#append('Toggle Nerd Tree', 'NERDTreeToggle', '<leader>nn')
+
+" section 4, text starting with "#" represents a section (see the screen capture below)
+call g:quickmenu#append('# Nerd Comment', '')
+
+call g:quickmenu#append('Toggle Comment', 'echo "<leader>c<space>"', '<leader>c<space>')
+call g:quickmenu#append('Comment', 'echo "<leader>cc"', '<leader>cc')
+call g:quickmenu#append('Uncomment', 'echo "<leader>cu"', '<leader>cu')
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => You Complete me

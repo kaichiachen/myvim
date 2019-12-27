@@ -223,10 +223,10 @@ map <C-space> ?
 map <silent> <leader><cr> :noh<cr>
 
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+map <leader>s <C-W>j
+map <leader>w <C-W>k
+map <leader>a <C-W>h
+map <leader>d <C-W>l
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
@@ -238,11 +238,11 @@ map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
 
 " Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext 
+map tn :tabnew<cr>
+map to :tabonly<cr>
+map tc :tabclose<cr>
+map tm :tabn<cr>
+map tp :tabp<cr>
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
