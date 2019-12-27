@@ -4,7 +4,7 @@
 let g:NERDTreeWinPos = "left"
 let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-let g:NERDTreeWinSize=35
+let g:NERDTreeWinSize=20
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
@@ -18,7 +18,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ 'Ignored'   : '☒',
     \ "Unknown"   : "?"
     \ }
-map <leader>nn :NERDTreeToggle<cr>
+map dd :NERDTreeToggle<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Quick Menu
@@ -37,7 +37,7 @@ call g:quickmenu#append('Search', './', '<space>')
 call g:quickmenu#append('PluginInstall', 'PlugInstall', 'PlugInstall')
 call g:quickmenu#append('Move Window', 'echo "<leader>a or w or s or d"', '<leader>a or w or s or d')
 call g:quickmenu#append('Create tab', 'tabnew', 'tn')
-call g:quickmenu#append('Delete tab', 'tabnew', 'tc')
+call g:quickmenu#append('Delete tab', 'tabnew', 'cc')
 call g:quickmenu#append('Move to next tab', 'tabn', 'tm')
 call g:quickmenu#append('Move to previous tab', 'tabp', 'tp')
 call g:quickmenu#append('Correct spelling word', 'setlocal spell!', 'dd')
@@ -54,7 +54,7 @@ call g:quickmenu#append('Move to Last', 'echo GG"', 'G')
 " section 3, text starting with "#" represents a section (see the screen capture below)
 call g:quickmenu#append('# Nerd Tree', '')
 
-call g:quickmenu#append('Toggle Nerd Tree', 'NERDTreeToggle', '<leader>nn')
+call g:quickmenu#append('Toggle Nerd Tree', 'NERDTreeToggle', 'd')
 
 " section 4, text starting with "#" represents a section (see the screen capture below)
 call g:quickmenu#append('# Nerd Comment', '')
@@ -66,8 +66,8 @@ call g:quickmenu#append('Uncomment', 'echo "<leader>cu"', '<leader>cu')
 " section 5, text starting with "#" represents a section (see the screen capture below)
 call g:quickmenu#append('# You Complete Me', '')
 
-call g:quickmenu#append('GoTo', 'YcmCompleter GoTo', 'yg')
-call g:quickmenu#append('GetType', 'YcmCompleter GetType', 'yt')
+call g:quickmenu#append('GoTo', 'YcmCompleter GoTo', 'g')
+call g:quickmenu#append('GetType', 'YcmCompleter GetType', 't')
 call g:quickmenu#append('GetDoc', 'YcmCompleter GetDoc', 'yd')
 call g:quickmenu#append('Fix', 'YcmCompleter FixIt', 'yd')
 
@@ -80,8 +80,8 @@ let g:ycm_goto_buffer_command = 'new-tab'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_semantic_triggers = {'c' : ['->', '.'],'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s','re!\[.*\]\s'],'ocaml' : ['.', '#'],'cpp,objcpp' : ['->', '.', '::'],'perl' : ['->'],'php' : ['->', '::'],'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],'ruby' : ['.', '::'],'lua' : ['.', ':'],'erlang' : [':'],}
 
-nnoremap yg :YcmCompleter GoTo <CR>
-nnoremap yt :YcmCompleter GetType <CR>
+nnoremap g :YcmCompleter GoTo <CR>
+nnoremap t :YcmCompleter GetType <CR>
 nnoremap yd :YcmCompleter GetDoc <CR>
 nnoremap yf :YcmCompleter FixIt <CR>
 

@@ -240,7 +240,7 @@ map <leader>h :bprevious<cr>
 " Useful mappings for managing tabs
 map tn :tabnew<cr>
 map to :tabonly<cr>
-map tc :tabclose<cr>
+map cc :tabclose<cr>
 map f :tabn<cr>
 map b :tabp<cr>
 
