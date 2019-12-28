@@ -34,7 +34,7 @@
 set history=500
 set nu
 
-
+set splitbelow
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -299,6 +299,7 @@ nmap <S-Up> <Up><Up><Up><Up><Up>
 nmap <S-Down> <Down><Down><Down><Down>
 
 nmap a i
+nmap ter :ter ++rows=5<cr>
 
 vnoremap <C-c> y
 
