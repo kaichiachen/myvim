@@ -34,6 +34,7 @@
 set history=500
 set nu
 
+
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -99,9 +100,6 @@ set ignorecase
 " When searching try to be smart about cases 
 set smartcase
 
-" Highlight search results
-set hlsearch
-
 " Makes search act like search in modern browsers
 set incsearch 
 
@@ -138,19 +136,11 @@ set foldcolumn=1
 " Enable syntax highlighting
 syntax enable 
 
-" Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-endif
-
-try
-    colorscheme desert
-catch
-endtry
-
 colo seoul256
 let g:seoul256_background = 233
 set background=dark
+
+colorscheme codedark
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -222,6 +212,11 @@ map <C-space> ?
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
+" Highlight search results
+set hlsearch
+highlight search cterm=bold,underline ctermbg=gray ctermfg=blue
+
+
 " Smart way to move between windows
 map <S-Down> <C-W>j
 map <S-Up> <C-W>k
@@ -248,6 +243,9 @@ map b :tabp<cr>
 nmap ww :w <cr>
 nmap qq :q <cr>
 nmap wq :wq <cr>
+
+nmap <CR> o<Esc>
+nmap <leader>f gg=G
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
@@ -295,11 +293,14 @@ nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
-inoremap f <Right><Right><Right><Right>
-inoremap b <Left><Left><Left><Left><Left>
+nmap <S-Right> <Right><Right><Right><Right>
+nmap <S-Left> <Left><Left><Left><Left><Left>
+nmap <S-Up> <Up><Up><Up><Up><Up>
+nmap <S-Down> <Down><Down><Down><Down>
+
+nmap a i
 
 vnoremap <C-c> y
-" vnoremap <C-c> p
 
 if has("mac") || has("macunix")
   nmap <D-j> <M-j>
@@ -320,7 +321,6 @@ endfun
 if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
