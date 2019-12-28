@@ -35,7 +35,7 @@ call g:quickmenu#append('# Basic', '')
 
 call g:quickmenu#append('Search', './', '<space>')
 call g:quickmenu#append('PluginInstall', 'PlugInstall', 'PlugInstall')
-call g:quickmenu#append('Move Window', 'echo "<leader>a or w or s or d"', '<leader>a or w or s or d')
+call g:quickmenu#append('Move Window', 'echo "<shift> <Up> or <Down> or <Left> or <Right>"', '<shift> <Up> or <Down> or <Left> or <Right>')
 call g:quickmenu#append('Create tab', 'tabnew', 'tn')
 call g:quickmenu#append('Delete tab', 'tabnew', 'cc')
 call g:quickmenu#append('Move to next tab', 'tabn', 'tm')
@@ -98,3 +98,10 @@ let g:ale_linters = {
             \   'c': ['gcc'],
             \   'python': ['pylint'],
             \}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Async
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:asyncrun_open = 6
+let g:asyncrun_bell = 1
+nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>

@@ -14,6 +14,8 @@ Plug 'dense-analysis/ale'
 Plug 'scrooloose/nerdcommenter'
 
 Plug 'suan/vim-instant-markdown'
+
+Plug 'skywind3000/asyncrun.vim'
 call plug#end()
 
 source ~/.vim/vimrcs/basic.vim
