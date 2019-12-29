@@ -218,10 +218,10 @@ highlight search cterm=bold,underline ctermbg=gray ctermfg=blue
 
 
 " Smart way to move between windows
-map <S-Down> <C-W>j
-map <S-Up> <C-W>k
-map <S-Left> <C-W>h
-map <S-Right> <C-W>l
+map <C-W>s <C-W>j
+map <C-W>w <C-W>k
+map <C-W>a <C-W>h
+map <C-W>d <C-W>l
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
@@ -246,6 +246,8 @@ nmap wq :wq <cr>
 
 nmap <CR> o<Esc>
 nmap <leader>f gg=G
+
+map ter :ter ++rows=5<CR>
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
