@@ -139,7 +139,6 @@ let g:gitgutter_sign_modified = 'Δ'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '-'
 let g:gitgutter_sign_modified_removed = 'Δ-'
-nnoremap <C-[> <C-o> 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Gutentags
@@ -155,3 +154,5 @@ if !isdirectory(s:vim_tags)
    silent! call mkdir(s:vim_tags, 'p')
 endif
 
+nnoremap <C-[> <C-o><Left>
+nnoremap <C-\> gd 

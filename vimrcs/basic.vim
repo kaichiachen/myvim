@@ -306,7 +306,7 @@ map <S-Left> <Left><Left><Left><Left><Left>
 map <S-Up> <Up><Up><Up><Up><Up>
 map <S-Down> <Down><Down><Down><Down>
 
-vnoremap y "*y
+vnoremap <leader>y "*y
 nnoremap yy "*Y
 nnoremap pp "*p
 
