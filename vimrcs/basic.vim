@@ -218,10 +218,10 @@ highlight search cterm=bold,underline ctermbg=gray ctermfg=blue
 
 
 " Smart way to move between windows
-map <C-W>s <C-W>j
-map <C-W>w <C-W>k
-map <C-W>a <C-W>h
-map <C-W>d <C-W>l
+map <C-W><Down> <C-W>j
+map <C-W><Up> <C-W>k
+map <C-W><Left> <C-W>h
+map <C-W><Right> <C-W>l
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
