@@ -206,7 +206,7 @@ set guioptions-=L
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> :./
+map <space> /
 map <C-space> ?
 
 " Disable highlight when <leader><cr> is pressed
@@ -287,21 +287,24 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
+inoremap jj <ESC>
+vnoremap jj <ESC>
+
 " Move a line of text using ALT+[jk] or Command+[jk] on mac
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
-nmap <S-Right> <Right><Right><Right><Right>
-nmap <S-Left> <Left><Left><Left><Left><Left>
-nmap <S-Up> <Up><Up><Up><Up><Up>
-nmap <S-Down> <Down><Down><Down><Down>
+map <S-Right> <Right><Right><Right><Right>
+map <S-Left> <Left><Left><Left><Left><Left>
+map <S-Up> <Up><Up><Up><Up><Up>
+map <S-Down> <Down><Down><Down><Down>
 
-nmap a i
-nmap ter :ter ++rows=5<cr>
+vnoremap y "*y
+nnoremap yy "*Y
+nnoremap pp "*p
 
-vnoremap <C-c> y
 
 if has("mac") || has("macunix")
   nmap <D-j> <M-j>
