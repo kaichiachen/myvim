@@ -247,7 +247,7 @@ nmap ww :w <cr>
 nmap qq :q <cr>
 nmap wq :wq <cr>
 
-nmap <CR> o<Esc>
+"nmap <CR> o<Esc>
 nmap <leader>f gg=G
 
 map ter :ter ++rows=5<CR>

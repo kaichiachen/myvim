@@ -76,13 +76,13 @@ call g:quickmenu#append('Fix', 'YcmCompleter FixIt', 'yd')
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ycm_server_python_interpreter='/usr/bin/python'
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
-let g:ycm_goto_buffer_command = 'new-tab'
+"let g:ycm_goto_buffer_command = 'new-tab'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_key_list_stop_completion = [ '<Enter>' ]
 let g:ycm_semantic_triggers = {'c' : ['->', '.'],'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s','re!\[.*\]\s'],'ocaml' : ['.', '#'],'cpp,objcpp' : ['->', '.', '::'],'perl' : ['->'],'php' : ['->', '::'],'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],'ruby' : ['.', '::'],'lua' : ['.', ':'],'erlang' : [':'],}
 
-nnoremap g :YcmCompleter GoTo <CR>
-nnoremap t :YcmCompleter GetType <CR>
+nnoremap yg :YcmCompleter GoTo <CR>
+nnoremap yt :YcmCompleter GetType <CR>
 nnoremap yd :YcmCompleter GetDoc <CR>
 nnoremap yf :YcmCompleter FixIt <CR>
 
@@ -139,6 +139,7 @@ let g:gitgutter_sign_modified = 'Δ'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '-'
 let g:gitgutter_sign_modified_removed = 'Δ-'
+nnoremap <C-[> <C-o> 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Gutentags
