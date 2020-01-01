@@ -251,6 +251,7 @@ map <S-k> :tabn<cr>
 nmap ww :w <cr>
 nmap qq :q <cr>
 nmap wq :wq <cr>
+nnoremap a i
 
 "nmap <CR> o<Esc>
 nmap <leader>f gg=G

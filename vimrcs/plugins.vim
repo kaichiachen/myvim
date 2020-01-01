@@ -155,4 +155,8 @@ if !isdirectory(s:vim_tags)
 endif
 
 nnoremap <C-[> <C-o><Left>
-nnoremap <C-\> gd 
+nnoremap <C-\> gd
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => AsyncRun
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap cmd :AsyncRun!<space>
