@@ -33,6 +33,7 @@
 " Sets how many lines of history VIM has to remember
 set history=500
 set nu
+set relativenumber
 
 set splitbelow
 " Enable filetype plugins
@@ -239,8 +240,8 @@ map <leader>h :bprevious<cr>
 map tn :tabnew<cr>
 map to :tabonly<cr>
 map cc :tabclose<cr>
-map f :tabn<cr>
-map b :tabp<cr>
+map <S-k> :tabn<cr>
+map <S-j> :tabp<cr>
 
 " Save and Exit
 nmap ww :w <cr>
