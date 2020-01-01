@@ -1,3 +1,5 @@
+"
+"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer: 
 "       Amir Salihefendic — @amix3k
@@ -240,8 +242,10 @@ map <leader>h :bprevious<cr>
 map tn :tabnew<cr>
 map to :tabonly<cr>
 map cc :tabclose<cr>
-map <S-k> :tabn<cr>
+map f :tabn<cr>
+map b :tabp<cr>
 map <S-j> :tabp<cr>
+map <S-k> :tabn<cr>
 
 " Save and Exit
 nmap ww :w <cr>
