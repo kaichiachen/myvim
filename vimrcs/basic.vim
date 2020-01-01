@@ -142,11 +142,17 @@ set foldcolumn=1
 " Enable syntax highlighting
 syntax enable 
 
+" Visual Studo Code scheme
 colo seoul256
 let g:seoul256_background = 233
 set background=dark
-
 colorscheme codedark
+
+" solarized scheme  
+"set t_Co=256  
+"let g:solarized_termcolors=256  
+"set background=dark  
+"colorscheme solarized 
 
 " Set extra options when running in GUI mode
 if has("gui_running")
