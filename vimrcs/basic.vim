@@ -314,7 +314,7 @@ vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 map [1;2C <Right><Right><Right><Right>
 map [1;2D <Left><Left><Left><Left><Left>
 map [1;2A <Up><Up><Up>
-map [1;2B <Down><Down>
+map [1;2B <Down><Down><Down>
 
 vmap <leader>y "*y
 nmap yy "*Y
