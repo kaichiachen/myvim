@@ -241,8 +241,8 @@ map <leader>bd :Bclose<cr>:tabclose<cr>gT
 " Close all the buffers
 map <leader>ba :bufdo bd<cr>
 
-map <leader>l :bnext<cr>
-map <leader>h :bprevious<cr>
+map  :bnext<cr>
+"map <leader>h :bprevious<cr>
 
 " Useful mappings for managing tabs
 map tn :tabnew<cr>
@@ -313,12 +313,12 @@ vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 map [1;2C <Right><Right><Right><Right>
 map [1;2D <Left><Left><Left><Left><Left>
-map [1;2A <Up><Up><Up><Up><Up>
-map [1;2B <Down><Down><Down><Down>
+map [1;2A <Up><Up><Up>
+map [1;2B <Down><Down>
 
-vnoremap <leader>y "*y
-nnoremap yy "*Y
-nnoremap pp "*p
+vmap <leader>y "*y
+nmap yy "*Y
+nmap pp "*p
 
 
 if has("mac") || has("macunix")
