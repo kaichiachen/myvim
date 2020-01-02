@@ -230,10 +230,10 @@ highlight search cterm=bold,underline ctermbg=gray ctermfg=blue
 
 
 " Smart way to move between windows
-map <C-W><Down> <C-W>j
-map <C-W><Up> <C-W>k
-map <C-W><Left> <C-W>h
-map <C-W><Right> <C-W>l
+nmap S <C-W>j
+nmap W <C-W>k
+nmap A <C-W>h
+nmap D <C-W>l
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
@@ -311,10 +311,10 @@ nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
-map <S-Right> <Right><Right><Right><Right>
-map <S-Left> <Left><Left><Left><Left><Left>
-map <S-Up> <Up><Up><Up><Up><Up>
-map <S-Down> <Down><Down><Down><Down>
+map [1;2C <Right><Right><Right><Right>
+map [1;2D <Left><Left><Left><Left><Left>
+map [1;2A <Up><Up><Up><Up><Up>
+map [1;2B <Down><Down><Down><Down>
 
 vnoremap <leader>y "*y
 nnoremap yy "*Y
