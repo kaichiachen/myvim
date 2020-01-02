@@ -1,9 +1,9 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'      " enhance nerdtree's tabs
-Plug 'Xuyuanp/nerdtree-git-plugin'  " display git status within Nerdtree
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " enhance devicons
+Plug 'jistr/vim-nerdtree-tabs'      
+Plug 'Xuyuanp/nerdtree-git-plugin'  
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'junegunn/seoul256.vim'
 Plug 'skywind3000/quickmenu.vim'
@@ -28,4 +28,3 @@ source ~/.vim/vimrcs/basic.vim
 source ~/.vim/vimrcs/toggle_mouse.vim
 source ~/.vim/vimrcs/plugins.vim
 source ~/.vim/vimrcs/filehighlight.vim
-let g:rainbow_active = 1
