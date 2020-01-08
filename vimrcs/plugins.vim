@@ -133,7 +133,9 @@ if !isdirectory(s:vim_tags)
     silent! call mkdir(s:vim_tags, 'p')
 endif
 
-nnoremap  <C-o>
+nnoremap  <C-]>
+nnoremap <C-p> <C-o>
+nnoremap   <C-W><C-]><C-W>T
 nnoremap <C-\> gd
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => AsyncRun

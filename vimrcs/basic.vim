@@ -234,7 +234,6 @@ nmap S <C-W>j
 nmap W <C-W>k
 nmap A <C-W>h
 nmap D <C-W>l
-
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
 
