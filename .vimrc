@@ -6,7 +6,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'junegunn/seoul256.vim'
-Plug 'skywind3000/quickmenu.vim'
 Plug 'dense-analysis/ale'
 Plug 'scrooloose/nerdcommenter'
 Plug 'suan/vim-instant-markdown'

@@ -26,57 +26,6 @@ let g:NERDTreeIndicatorMapCustom = {
 map tt :NERDTreeToggle<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Quick Menu
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-noremap <leader>menu :call quickmenu#toggle(0)<cr>
-" enable cursorline (L) and cmdline help (H)
-let g:quickmenu_options = "HL"
-
-" clear all the items
-call g:quickmenu#reset()
-
-" section 1, text starting with "#" represents a section (see the screen capture below)
-call g:quickmenu#append('# Basic', '')
-
-call g:quickmenu#append('Search', './', '<space>')
-call g:quickmenu#append('PluginInstall', 'PlugInstall', 'PlugInstall')
-call g:quickmenu#append('Move Window', 'echo "<shift> <Up> or <Down> or <Left> or <Right>"', '<shift> <Up> or <Down> or <Left> or <Right>')
-call g:quickmenu#append('Create tab', 'tabnew', 'tn')
-call g:quickmenu#append('Delete tab', 'tabnew', 'cc')
-call g:quickmenu#append('Move to next tab', 'tabn', 'tm')
-call g:quickmenu#append('Move to previous tab', 'tabp', 'tp')
-call g:quickmenu#append('Correct spelling word', 'setlocal spell!', 'dd')
-call g:quickmenu#append('Shift Code Block', 'echo "shift + < or >"', 'shift + < or >')
-
-" section 2, text starting with "#" represents a section (see the screen capture below)
-call g:quickmenu#append('# Move cursor', '')
-
-call g:quickmenu#append('Move a word', 'echo "w"', 'w')
-call g:quickmenu#append('Move to First', 'echo "gg"', 'gg')
-call g:quickmenu#append('Move to Last', 'echo GG"', 'G')
-
-
-" section 3, text starting with "#" represents a section (see the screen capture below)
-call g:quickmenu#append('# Nerd Tree', '')
-
-call g:quickmenu#append('Toggle Nerd Tree', 'NERDTreeToggle', 't')
-
-" section 4, text starting with "#" represents a section (see the screen capture below)
-call g:quickmenu#append('# Nerd Comment', '')
-
-call g:quickmenu#append('Toggle Comment', 'echo "shift+c"', 'shift+c')
-call g:quickmenu#append('Comment', 'echo "<leader>cc"', '<leader>cc')
-call g:quickmenu#append('Uncomment', 'echo "<leader>cu"', '<leader>cu')
-
-" section 5, text starting with "#" represents a section (see the screen capture below)
-call g:quickmenu#append('# You Complete Me', '')
-
-call g:quickmenu#append('GoTo', 'YcmCompleter GoTo', 'g')
-call g:quickmenu#append('GetType', 'YcmCompleter GetType', 't')
-call g:quickmenu#append('GetDoc', 'YcmCompleter GetDoc', 'yd')
-call g:quickmenu#append('Fix', 'YcmCompleter FixIt', 'yd')
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => You Complete me
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ycm_server_python_interpreter='/usr/bin/python'
