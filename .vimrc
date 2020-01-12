@@ -21,6 +21,11 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mileszs/ack.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'Raimondi/delimitMate'
+Plug 'junegunn/goyo.vim'
+Plug 'Junegunn/limelight.vim'
+Plug 'mbbill/undotree'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 source ~/.vim/vimrcs/basic.vim

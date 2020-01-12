@@ -248,7 +248,12 @@ map tn :tabnew<cr>
 map to :tabonly<cr>
 map cc :tabclose<cr>
 map <S-j> :tabp<cr>
-map <S-k> :tabn<cr>
+map <S-l> :tabn<cr>
+
+noremap i k
+noremap k j
+noremap j h
+noremap l l
 
 " Save and Exit
 nmap ww :w <cr>
@@ -314,6 +319,8 @@ map [1;2C <Right><Right><Right><Right>
 map [1;2D <Left><Left><Left><Left><Left>
 map [1;2A <Up><Up><Up>
 map [1;2B <Down><Down><Down>
+nnoremap <S-i> <Up><Up><Up><Up><Up>
+nnoremap <S-k> <Down><Down><Down><Down><Down>
 
 vmap <leader>y "*y
 nmap yy "*Y

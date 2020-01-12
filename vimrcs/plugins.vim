@@ -1,4 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDTreeChDirMode = 2
@@ -141,3 +141,25 @@ nnoremap <C-\> gd
 " => AsyncRun
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap cmd :AsyncRun!<space>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => limelight & goyo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+
+let g:goyo_width = 86
+let g:goyo_linenr = 0
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => undoTree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>ut :UndotreeToggle<cr>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => easymotion
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap s <Plug>(easymotion-s)
