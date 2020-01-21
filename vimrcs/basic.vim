@@ -230,10 +230,10 @@ highlight search cterm=bold,underline ctermbg=gray ctermfg=blue
 
 
 " Smart way to move between windows
-nmap S <C-W>j
-nmap W <C-W>k
-nmap A <C-W>h
-nmap D <C-W>l
+nnoremap <S-s> <C-W>j
+nnoremap <S-w> <C-W>k
+nnoremap <S-a> <C-W>h
+nnoremap <S-d> <C-W>l
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
 
@@ -244,7 +244,7 @@ map  :bnext<cr>
 "map <leader>h :bprevious<cr>
 
 " Useful mappings for managing tabs
-map tn :tabnew<cr>
+map tn :tabnew<space>
 map to :tabonly<cr>
 map cc :tabclose<cr>
 map <S-j> :tabp<cr>
@@ -259,6 +259,7 @@ noremap l l
 nmap ww :w <cr>
 nmap qq :q <cr>
 nmap wq :wq <cr>
+nnoremap f a
 nnoremap a i
 
 "nmap <CR> o<Esc>
@@ -325,6 +326,11 @@ nnoremap <S-k> <Down><Down><Down><Down><Down>
 vmap <leader>y "*y
 nmap yy "*Y
 nmap pp "*p
+
+" cut
+vnoremap <C-X> "+x
+vnoremap <C-C> "+y
+map <C-V> "+gP
 
 
 if has("mac") || has("macunix")

@@ -54,7 +54,7 @@ let g:ale_linters = {
             \   'c': ['gcc'],
             \   'python': ['pylint'],
             \}
-map ss :ALEDetail<CR>
+map <leader>d :ALEDetail<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Async
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -163,3 +163,8 @@ nnoremap <leader>ut :UndotreeToggle<cr>
 " => easymotion
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap s <Plug>(easymotion-s)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => multi-cusor
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"let g:multi_cursor_prev_key            = '<C-m>'
+"let g:multi_cursor_quit_key            = '<C-q>'

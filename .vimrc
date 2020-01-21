@@ -26,6 +26,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'Junegunn/limelight.vim'
 Plug 'mbbill/undotree'
 Plug 'easymotion/vim-easymotion'
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 source ~/.vim/vimrcs/basic.vim
