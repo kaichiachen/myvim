@@ -35,7 +35,6 @@
 " Sets how many lines of history VIM has to remember
 set history=500
 set nu
-set relativenumber
 
 set splitbelow
 " Enable filetype plugins
@@ -254,6 +253,11 @@ noremap i k
 noremap k j
 noremap j h
 noremap l l
+
+set foldmethod=indent
+set foldlevel=1
+map zC zM
+map zO zR
 
 " Save and Exit
 nmap ww :w <cr>
