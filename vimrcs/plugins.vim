@@ -8,7 +8,6 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.pyc$', '\.swp', '\.swo', '__pycache__']
 let NERDTreeDirArrows = 1
 let g:NERDTreeFileExtensionHighlightFullName = 1
-"当NERDTree为剩下的唯一窗口时自动关闭
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeWinSize=20
 let g:NERDTreeIndicatorMapCustom = { 
@@ -133,7 +132,6 @@ if !isdirectory(s:vim_tags)
     silent! call mkdir(s:vim_tags, 'p')
 endif
 
-nnoremap  <C-]>
 nnoremap <C-p> <C-o>
 nnoremap   <C-W><C-]><C-W>T
 nnoremap <C-\> gd

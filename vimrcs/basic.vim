@@ -1,56 +1,16 @@
-"
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: 
-"       Amir Salihefendic — @amix3k
-"
-" Awesome_version:
-"       Get this config, nice color schemes and lots of plugins!
-"
-"       Install the awesome version from:
-"
-"           https://github.com/amix/vimrc
-"
-" Sections:
-"    -> General
-"    -> VIM user interface
-"    -> Colors and Fonts
-"    -> Files and backups
-"    -> Text, tab and indent related
-"    -> Visual mode related
-"    -> Moving around, tabs and buffers
-"    -> Status line
-"    -> Editing mappings
-"    -> vimgrep searching and cope displaying
-"    -> Spell checking
-"    -> Misc
-"    -> Helper functions
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Sets how many lines of history VIM has to remember
 set history=500
 set nu
 
 set splitbelow
-" Enable filetype plugins
 filetype plugin on
 filetype indent on
 
-" Set to auto read when a file is changed from the outside
 set autoread
 au FocusGained,BufEnter * checktime
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
-
-" Fast saving
-nmap <leader>w :w!<cr>
 
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
@@ -300,32 +260,16 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 """"""""""""""""""""""""""""""
 " Always show the status line
 set laststatus=2
+" Move code block
+vnoremap <S-k> :m '>+1<CR>gv=gv
+vnoremap <S-i> :m '<-2<CR>gv=gv
 
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Editing mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Remap VIM 0 to first non-blank character
-map 0 ^
-
 inoremap jj <ESC><Right>
 vnoremap jj <ESC><Right>
 
-" Move a line of text using ALT+[jk] or Command+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
-map [1;2C <Right><Right><Right><Right>
-map [1;2D <Left><Left><Left><Left><Left>
-map [1;2A <Up><Up><Up>
-map [1;2B <Down><Down><Down>
-nnoremap <S-i> <Up><Up><Up><Up><Up>
-nnoremap <S-k> <Down><Down><Down><Down><Down>
 
 vmap <leader>y "*y
 nmap yy "*Y
@@ -335,6 +279,17 @@ nmap pp "*p
 vnoremap <C-X> "+x
 vnoremap <C-C> "+y
 map <C-V> "+gP
+
+inoremap <S-Right> <Right><Right><Right><Right>
+inoremap <S-Left> <Left><Left><Left><Left><Left>
+inoremap <S-Up> <Up><Up><Up><Up><Up><Up>
+inoremap <S-Down> <Down><Down><Down><Down><Down><Down>
+nnoremap <S-Right> <Right><Right><Right><Right>
+nnoremap <S-Left> <Left><Left><Left><Left><Left>
+nnoremap <S-Up> <Up><Up><Up><Up><Up><Up>
+nnoremap <S-Down> <Down><Down><Down><Down><Down><Down>
+nnoremap <S-i> <Up><Up><Up><Up><Up>
+nnoremap <S-k> <Down><Down><Down><Down><Down>
 
 
 if has("mac") || has("macunix")
