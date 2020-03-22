@@ -1,6 +1,8 @@
 *.*
 !install.sh
+!basic_install.sh
 !.vimrc
+!.basic_vimrc
 !.gitignore
 
 vimrcs/*.*

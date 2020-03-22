@@ -22,7 +22,6 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
-
 set cursorcolumn
 set cursorline
 
@@ -32,7 +31,7 @@ set langmenu=en
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
-" Turn on the Wild menu
+" Turn on the Wild menu, command autocompletion
 set wildmenu
 
 " Ignore compiled files
@@ -46,9 +45,6 @@ endif
 "Always show current position
 set ruler
 
-" Set mouse
-" set mouse=a
-
 "Height of the command bar
 set cmdheight=1
 
@@ -60,7 +56,7 @@ set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
 " Ignore case when searching
-set ignorecase
+" set ignorecase
 
 " When searching try to be smart about cases 
 set smartcase
@@ -101,17 +97,11 @@ set foldcolumn=1
 " Enable syntax highlighting
 syntax enable 
 
-" Visual Studo Code scheme
-colo seoul256
-let g:seoul256_background = 233
-set background=dark
-colorscheme codedark
-
 " solarized scheme  
-"set t_Co=256  
-"let g:solarized_termcolors=256  
-"set background=dark  
-"colorscheme solarized 
+set t_Co=256  
+let g:solarized_termcolors=256  
+set background=dark  
+colorscheme darkblue
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -158,15 +148,6 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
-
-""""""""""""""""""""""""""""""
-" => Visual mode related
-""""""""""""""""""""""""""""""
-" Visual mode pressing * or # searches for the current selection
-" Super useful! From an idea by Michael Naumann
-vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
-vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
-
 " Disable scrollbars (real hackers don't use scrollbars for navigation!)
 set guioptions-=r
 set guioptions-=R
@@ -178,15 +159,9 @@ set guioptions-=L
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
-map <C-space> ?
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
-
-" Highlight search results
-set hlsearch
-highlight search cterm=bold,underline ctermbg=gray ctermfg=blue
-
 
 " Smart way to move between windows
 nnoremap <S-s> <C-W>j
@@ -196,18 +171,19 @@ nnoremap <S-d> <C-W>l
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
 
-" Close all the buffers
-map <leader>ba :bufdo bd<cr>
+nnoremap h :
 
-map  :bnext<cr>
-"map <leader>h :bprevious<cr>
+noremap <C-]> :bnext<cr>
+noremap <C-p> :bprevious<cr>
 
 " Useful mappings for managing tabs
 map tn :tabnew<space>
-map to :tabonly<cr>
-map cc :tabclose<cr>
 map <S-j> :tabp<cr>
 map <S-l> :tabn<cr>
+
+" Opens a new tab with the current buffer's path
+" Super useful when editing files in the same directory
+nnoremap te :tabedit <C-r>=expand("%:p:h")<cr>/
 
 noremap i k
 noremap k j
@@ -216,8 +192,10 @@ noremap l l
 
 set foldmethod=indent
 set foldlevel=1
-map zC zM
-map zO zR
+nmap zC zM
+nmap zO zR
+nmap zc zm
+nmap zo zr
 
 " Save and Exit
 nmap ww :w <cr>
@@ -226,20 +204,16 @@ nmap wq :wq <cr>
 nnoremap f a
 nnoremap a i
 
-"nmap <CR> o<Esc>
+nmap <CR> o<Esc>
 nmap <leader>f gg=G
 
 map ter :ter ++rows=5<CR>
 
 " Let 'tl' toggle between this and the last accessed tab
-let g:lasttab = 1
-nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
-au TabLeave * let g:lasttab = tabpagenr()
+" let g:lasttab = 1
+" nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
+" au TabLeave * let g:lasttab = tabpagenr()
 
-
-" Opens a new tab with the current buffer's path
-" Super useful when editing files in the same directory
-map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
@@ -272,8 +246,7 @@ vnoremap jj <ESC><Right>
 
 
 vmap <leader>y "*y
-nmap yy "*Y
-nmap pp "*p
+nnoremap p <Left>p
 
 " cut
 vnoremap <C-X> "+x
@@ -290,6 +263,10 @@ nnoremap <S-Up> <Up><Up><Up><Up><Up><Up>
 nnoremap <S-Down> <Down><Down><Down><Down><Down><Down>
 nnoremap <S-i> <Up><Up><Up><Up><Up>
 nnoremap <S-k> <Down><Down><Down><Down><Down>
+
+" Highlight search results
+set hlsearch
+highlight search cterm=bold,underline ctermbg=gray ctermfg=blue
 
 
 if has("mac") || has("macunix")
@@ -317,29 +294,6 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
-
-" Shortcuts using <leader>
-map <leader>sn ]s
-map <leader>sp [s
-map <leader>sa zg
-map <leader>s? z=
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Misc
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
-" Quickly open a buffer for scribble
-map <leader>q :e ~/buffer<cr>
-
-" Quickly open a markdown buffer for scribble
-map <leader>x :e ~/buffer.md<cr>
-
-" Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
@@ -377,19 +331,3 @@ function! CmdLine(str)
     call feedkeys(":" . a:str)
 endfunction 
 
-function! VisualSelection(direction, extra_filter) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-
-    let l:pattern = escape(@", "\\/.*'$^~[]")
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    if a:direction == 'gv'
-        call CmdLine("Ack '" . l:pattern . "' " )
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    endif
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction

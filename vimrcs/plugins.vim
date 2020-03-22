@@ -166,3 +166,11 @@ nmap s <Plug>(easymotion-s)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:multi_cursor_prev_key            = '<C-m>'
 "let g:multi_cursor_quit_key            = '<C-q>'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Visual Studo Code scheme
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+colo seoul256
+let g:seoul256_background = 233
+set background=dark
+colorscheme codedark
+highlight search cterm=bold,underline ctermbg=gray ctermfg=blue
