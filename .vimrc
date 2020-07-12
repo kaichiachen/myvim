@@ -27,7 +27,14 @@ Plug 'Junegunn/limelight.vim'
 Plug 'mbbill/undotree'
 Plug 'easymotion/vim-easymotion'
 Plug 'terryma/vim-multiple-cursors'
+"Plug 'SirVer/ultisnips'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+
 call plug#end()
+
 
 source ~/.vim/vimrcs/basic.vim
 source ~/.vim/vimrcs/toggle_mouse.vim

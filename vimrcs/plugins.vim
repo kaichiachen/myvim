@@ -133,12 +133,13 @@ if !isdirectory(s:vim_tags)
 endif
 
 nnoremap <C-p> <C-o>
-nnoremap   <C-W><C-]><C-W>T
+nnoremap <C-P>  <C-W><C-]><C-W>T
 nnoremap <C-\> gd
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => AsyncRun
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap cmd :AsyncRun!<space>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => limelight & goyo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -156,16 +157,15 @@ autocmd! User GoyoLeave Limelight!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => undoTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>ut :UndotreeToggle<cr>
+noremap ut :UndotreeToggle<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => easymotion
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap s <Plug>(easymotion-s)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => multi-cusor
+" => multi-cursor
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let g:multi_cursor_prev_key            = '<C-m>'
-"let g:multi_cursor_quit_key            = '<C-q>'
+let g:multi_cursor_skip_key            = '<C-m>'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Visual Studo Code scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -174,3 +174,9 @@ let g:seoul256_background = 233
 set background=dark
 colorscheme codedark
 highlight search cterm=bold,underline ctermbg=gray ctermfg=blue
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => snippets
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+imap <C-\> <Plug>snipMateNextOrTrigger
+let g:UltiSnipsSnippetDirectories=["UltiSnips","mysnippets"]
+

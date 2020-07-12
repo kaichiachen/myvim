@@ -172,7 +172,7 @@ nnoremap <S-d> <C-W>l
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
 
 nnoremap h :
-
+noremap 0 ^
 noremap <C-]> :bnext<cr>
 noremap <C-p> :bprevious<cr>
 
@@ -234,9 +234,6 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 """"""""""""""""""""""""""""""
 " Always show the status line
 set laststatus=2
-" Move code block
-vnoremap <S-k> :m '>+1<CR>gv=gv
-vnoremap <S-i> :m '<-2<CR>gv=gv
 
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
@@ -252,17 +249,23 @@ nnoremap p <Left>p
 vnoremap <C-X> "+x
 vnoremap <C-C> "+y
 map <C-V> "+gP
+nnoremap d "_d
 
 inoremap <S-Right> <Right><Right><Right><Right>
 inoremap <S-Left> <Left><Left><Left><Left><Left>
 inoremap <S-Up> <Up><Up><Up><Up><Up><Up>
 inoremap <S-Down> <Down><Down><Down><Down><Down><Down>
-nnoremap <S-Right> <Right><Right><Right><Right>
-nnoremap <S-Left> <Left><Left><Left><Left><Left>
-nnoremap <S-Up> <Up><Up><Up><Up><Up><Up>
-nnoremap <S-Down> <Down><Down><Down><Down><Down><Down>
-nnoremap <S-i> <Up><Up><Up><Up><Up>
-nnoremap <S-k> <Down><Down><Down><Down><Down>
+noremap <S-Right> <Right><Right><Right><Right>
+noremap <S-Left> <Left><Left><Left><Left><Left>
+noremap <S-Up> <Up><Up><Up><Up><Up><Up>
+noremap <S-Down> <Down><Down><Down><Down><Down><Down>
+noremap <S-i> <Up><Up><Up><Up><Up>
+noremap <S-k> <Down><Down><Down><Down><Down>
+
+" Move code block
+vnoremap <S-k> :m '>+1<CR>gv=gv
+vnoremap <S-i> :m '<-2<CR>gv=gv
+
 
 " Highlight search results
 set hlsearch
