@@ -4,7 +4,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'      
 Plug 'Xuyuanp/nerdtree-git-plugin'  
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
 Plug 'junegunn/seoul256.vim'
 Plug 'dense-analysis/ale'
 Plug 'scrooloose/nerdcommenter'
@@ -16,7 +16,7 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'Yggdroot/indentLine'
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 Plug 'airblade/vim-gitgutter'
-Plug 'ludovicchabant/vim-gutentags'
+Plug 'ludovicchabant/vim-gutentags', { 'commit': '31c0ead' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mileszs/ack.vim'
 Plug 'altercation/vim-colors-solarized'

@@ -27,8 +27,8 @@ map tt :NERDTreeToggle<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => You Complete me
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ycm_server_python_interpreter='/usr/bin/python'
-let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+"let g:ycm_server_python_interpreter='/usr/bin/python3'
+let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py'
 "let g:ycm_goto_buffer_command = 'new-tab'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_key_list_stop_completion = [ '<Enter>' ]
@@ -130,6 +130,10 @@ let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 if !isdirectory(s:vim_tags)
     silent! call mkdir(s:vim_tags, 'p')
+endif
+
+if !executable('ctags')
+    let g:gutentags_dont_load = 1
 endif
 
 nnoremap <C-p> <C-o>
