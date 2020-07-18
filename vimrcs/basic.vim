@@ -178,8 +178,8 @@ noremap <C-p> :bprevious<cr>
 
 " Useful mappings for managing tabs
 map tn :tabnew<space>
-map <S-j> :tabp<cr>
-map <S-l> :tabn<cr>
+nmap <S-u> :tabp<cr>
+nmap <S-o> :tabn<cr>
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
@@ -261,6 +261,9 @@ noremap <S-Up> <Up><Up><Up><Up><Up><Up>
 noremap <S-Down> <Down><Down><Down><Down><Down><Down>
 noremap <S-i> <Up><Up><Up><Up><Up>
 noremap <S-k> <Down><Down><Down><Down><Down>
+noremap <S-l> <Right><Right><Right><Right>
+noremap <S-j> <Left><Left><Left><Left><Left>
+
 
 " Move code block
 vnoremap <S-k> :m '>+1<CR>gv=gv
