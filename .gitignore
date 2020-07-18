@@ -7,3 +7,4 @@
 
 vimrcs/*.*
 !vimrcs/*.vim
+tags
