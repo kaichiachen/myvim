@@ -2,8 +2,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'      
-Plug 'Xuyuanp/nerdtree-git-plugin'  
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
+"Plug 'Xuyuanp/nerdtree-git-plugin'  
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
 Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
 Plug 'junegunn/seoul256.vim'
 Plug 'dense-analysis/ale'
